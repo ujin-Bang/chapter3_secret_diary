@@ -2,6 +2,7 @@ package com.restart.chapter3_secret_diary
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -76,8 +77,7 @@ class MainActivity : AppCompatActivity() {
             if (passwordPreferences.getString("password", "000").equals(passwordFromUser)) {
                 //패스워드가 같은 경우
 
-                //todo 다이어리 페이지 작성 후에 넘겨주어야함.
-//                startActivity()
+                startActivity(Intent(this, DiaryActivity::class.java))
             } else {
                 //패스워드가 다른 경우 얼럿창 띄우기
                 showErrorAlertDialog()
